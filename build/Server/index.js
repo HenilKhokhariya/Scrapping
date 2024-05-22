@@ -16,9 +16,9 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use("/api", r.router);
 
-app.use(express.static(path.join(__dirname, "../build")));
+app.use(express.static(path.join(__dirname, "../")));
 app.get("*", function (req, res) {
-  res.sendFile(path.join(__dirname, "../build/index.html"));
+  res.sendFile(path.join(__dirname, "../index.html"));
 });
 
 connectDb().then((res) => {
